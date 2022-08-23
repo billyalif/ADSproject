@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/gallery', fn() => view('gallery'));
-Route::get('/home', fn() => view('home'));
-Route::get('/about', fn() => view('about'));
+Route::get('/backend', fn() => view('backend'));
+Route::get('/frontend', fn() => view('frontend'));
+Route::get('/uiux', fn() => view('uiux'));
+Route::get('/dataanalyst', fn() => view('data'));
+Route::get('/techwriter', fn() => view('writer'));
+

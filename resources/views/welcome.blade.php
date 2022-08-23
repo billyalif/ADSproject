@@ -1,5 +1,5 @@
 <x-app-layout title="Welcome">
-    <div class="container">
+    <div class="container text-center" >
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="fs-5 fw-bold text-dark">
@@ -7,13 +7,9 @@
                 </h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-4 mt-2">
                 {{-- Anonymous component --}}
-                <x-card title="Laravel Framework">
-                    Laravel is a web application framework with expressive, elegant syntax. We’ve already laid the foundation — freeing you to create without sweating the small things.
+                <x-card title="ADS Digital Partner">
+                    ADS Digital Partner (PT Adma Digital Solusi) is an IT consulting company that was founded in 2019 based in Jakarta, Surabaya and Bandung. We focus on presenting IT-based solutions for a better Indonesia in the future. Our startup lines, Panenpanen.id and Bisnisomall.com are continuously advancing the digital supply chain in sub-urban and rural areas.
                 </x-card>
-            </div>
-        </div>
     </div>
 </x-app-layout>
