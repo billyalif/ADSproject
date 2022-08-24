@@ -23,6 +23,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="/uiux">UI/UX</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white " href="/users">Users</a>
+                </li>
             </ul>
         </div>
     </div>

@@ -1,25 +1,30 @@
 <?php
 
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/users', [UserController::class, 'index']);
+Route::get('users/{user}', [UserController::class, 'show']);
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/backend', fn() => view('backend'));
-Route::get('/frontend', fn() => view('frontend'));
-Route::get('/uiux', fn() => view('uiux'));
-Route::get('/dataanalyst', fn() => view('data'));
-Route::get('/techwriter', fn() => view('writer'));
+Route::get('/backend', [PageController::class, 'backend']);
+Route::get('/frontend', [PageController::class, 'frontend']);
+Route::get('/uiux', [PageController::class, 'uiux']);
+Route::get('/dataanalyst', [PageController::class, 'dataanalyst']);
+Route::get('/techwriter', [PageController::class, 'techwriter']);
 
+
+
+Route::get('/dashboard', fn () => 'dashboard')
+    ->name('dashboard')
+    ->middleware('kmkey');
+
+// OR
+
+Route::middleware('kmkey')->group(function () {
+    Route::get('/dashboard', fn () => 'Dashboard')->name('dashboard');
+});

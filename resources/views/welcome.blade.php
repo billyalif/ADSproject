@@ -8,8 +8,12 @@
             </div>
         </div>
                 {{-- Anonymous component --}}
-                <x-card title="ADS Digital Partner">
-                    ADS Digital Partner (PT Adma Digital Solusi) is an IT consulting company that was founded in 2019 based in Jakarta, Surabaya and Bandung. We focus on presenting IT-based solutions for a better Indonesia in the future. Our startup lines, Panenpanen.id and Bisnisomall.com are continuously advancing the digital supply chain in sub-urban and rural areas.
+                <x-card title="ADS Digital Partner" teks=''>
+                    ADS Digital Partner (PT Adma Digital Solusi)
+                is an IT consulting company that was founded in 2019 based in Jakarta, Surabaya and
+                Bandung. We focus on presenting IT-based solutions for a better Indonesia in the future.
+                Our startup lines, Panenpanen.id and Bisnisomall.com are continuously advancing the
+                digital supply chain in sub-urban and rural areas.
                 </x-card>
     </div>
 </x-app-layout>
