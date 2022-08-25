@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +16,44 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+
+    $faker = \Faker\Factory::create('id_ID');
+    for ($i = 0; $i < 5; $i++) {
+        DB::table('users')->insert([
+            'name'      => $faker->name(),
+            'email'       => $faker->safeEmail(),
+            'city'       => $faker->city()
+        ]);
+    }
+
+    for ($i = 0; $i < 5; $i++) {
+        DB::table('stores')->insert([
+            'name'  => $faker->company(),
+            'user_id' => $faker->numberBetween(1,5)
+        ]);
+    }
+
+    for ($i = 0; $i < 5; $i++) {
+        DB::table('products')->insert([
+            'name'  => $faker->word(),
+            'slug' => $faker->slug(),
+            'price' => $faker->randomNumber(6,true),
+            'description' => $faker->paragraph(),
+            'photo' => $faker->url(),
+            'store_id' => $faker->numberBetween(1,5)
+        ]);
+    }
+
+    for ($i = 0; $i < 5; $i++) {
+        DB::table('product_reviews')->insert([
+            'score'  => $faker->randomDigitNotNull(),
+            'review' => $faker->sentence(),
+            'user_id' => $faker->numberBetween(1,5),
+            'product_id' => $faker->numberBetween(1,5)
+        ]);
+    }
+
+
     }
 }
