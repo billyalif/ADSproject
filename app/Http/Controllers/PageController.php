@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function backend(){
-        return view('backend');
+    public function product(){
+        return view('product');
     }
 
-    public function frontend(){
-        return view('frontend');
+    public function store(){
+        return view('store');
     }
 
     public function techwriter(){

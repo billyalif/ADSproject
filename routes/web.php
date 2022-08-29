@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,13 +12,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/backend', [PageController::class, 'backend']);
-Route::get('/frontend', [PageController::class, 'frontend']);
-Route::get('/uiux', [PageController::class, 'uiux']);
-Route::get('/dataanalyst', [PageController::class, 'dataanalyst']);
-Route::get('/techwriter', [PageController::class, 'techwriter']);
-
-
+Route::get('/product', [ProductController::class, 'index']);
+Route::get('/product-input', [ProductController::class, 'insert']);
+Route::get('/store', [PageController::class, 'store']);
+Route::post('/product-create', [ProductController::class, 'store']);
+Route::get('/product-delete/{id}', [ProductController::class, 'destroy']);
+Route::post('/product-update/{id}', [ProductController::class, 'update']);
+Route::get('/product-edit/{id}', [ProductController::class, 'edit']);
 
 Route::get('/dashboard', fn () => 'dashboard')
     ->name('dashboard')
