@@ -120,7 +120,11 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
-
+    'providers' => [
+        // ...
+        Yajra\DataTables\DataTablesServiceProvider::class,
+    ],
+    
     'key' => env('APP_KEY'),
     'kmKey' => env('KM_KEY','default'),
     'cipher' => 'AES-256-CBC',

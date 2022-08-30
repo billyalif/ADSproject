@@ -12,9 +12,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/product', [ProductController::class, 'index']);
+Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 Route::get('/product-input', [ProductController::class, 'insert']);
-Route::get('/store', [PageController::class, 'store']);
+Route::get('/store', [ProductController::class, 'index2']);
 Route::post('/product-create', [ProductController::class, 'store']);
 Route::get('/product-delete/{id}', [ProductController::class, 'destroy']);
 Route::post('/product-update/{id}', [ProductController::class, 'update']);

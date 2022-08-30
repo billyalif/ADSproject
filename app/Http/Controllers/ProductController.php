@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Store;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class ProductController extends Controller
 {
@@ -12,6 +13,25 @@ class ProductController extends Controller
         $product = Product::all();
         return view('product',['product'=>$product]);
     }
+
+    public function index2(){
+
+        $data = Product::get();
+
+        if (request()->ajax()) {
+            return DataTables::of($data)
+                ->addIndexColumn()
+                ->addColumn('store_id', function($item) {
+                    return $item->Store->name;
+                })
+
+                ->make(true);
+        }
+
+        return view('store');
+    }
+
+
 
     public function insert(){
         $store = Store::all();
