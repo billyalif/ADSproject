@@ -29,3 +29,8 @@ Route::get('/dashboard', fn () => 'dashboard')
 Route::middleware('kmkey')->group(function () {
     Route::get('/dashboard', fn () => 'Dashboard')->name('dashboard');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

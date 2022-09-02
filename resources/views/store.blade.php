@@ -1,5 +1,6 @@
-@extends('app')
+@extends('layouts.app2')
 @section('content')
+<x-card title="Store Data">
     <div class="text-center py-5">
         <h1>DATA TABLE</h1>
     </div>
@@ -22,6 +23,8 @@
             </tbody>
         </table>
     </div>
+</x-card>
+
 @endsection
 
 @push('scripts')
