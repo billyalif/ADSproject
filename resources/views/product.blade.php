@@ -2,6 +2,7 @@
     <div class="container">
         <x-card title='Product Data' teks=''>
             <a class="btn btn-primary float-right" href="/product-input" >Add Product</a>
+            <a class="btn btn-primary float-right" href="/product-export" >Export</a>
             <table class="table table-hover">
                 <thead>
                     <th>#</th>

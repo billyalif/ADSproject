@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Store;
 use Illuminate\Http\Request;
+use App\Exports\ProductExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Yajra\DataTables\Facades\DataTables;
 
 class ProductController extends Controller
@@ -78,6 +80,10 @@ class ProductController extends Controller
         ]);
 
         return redirect('/product');
+    }
+
+    public function export(){
+        return Excel::download(new ProductExport, 'users.xlsx');
     }
 
     public function destroy($id){

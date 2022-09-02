@@ -120,11 +120,7 @@ return [
     | will not be safe. Please do this before deploying an application!
     |
     */
-    'providers' => [
-        // ...
-        Yajra\DataTables\DataTablesServiceProvider::class,
-    ],
-    
+
     'key' => env('APP_KEY'),
     'kmKey' => env('KM_KEY','default'),
     'cipher' => 'AES-256-CBC',
@@ -185,7 +181,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Yajra\DataTables\DataTablesServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -214,6 +211,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ])->toArray(),
 
 ];
