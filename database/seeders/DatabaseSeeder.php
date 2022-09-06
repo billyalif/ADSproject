@@ -19,20 +19,20 @@ class DatabaseSeeder extends Seeder
 
 
     $faker = \Faker\Factory::create('id_ID');
-    // for ($i = 0; $i < 5; $i++) {
-    //     DB::table('users')->insert([
-    //         'name'      => $faker->name(),
-    //         'email'       => $faker->safeEmail(),
-    //         'password'       => bcrypt('password')
-    //     ]);
-    // }
+    for ($i = 0; $i < 5; $i++) {
+        DB::table('users')->insert([
+            'name'      => $faker->name(),
+            'email'       => $faker->safeEmail(),
+            'password'       => bcrypt('password')
+        ]);
+    }
 
-    // for ($i = 0; $i < 5; $i++) {
-    //     DB::table('stores')->insert([
-    //         'name'  => $faker->company(),
-    //         'user_id' => $faker->numberBetween(1,5)
-    //     ]);
-    // }
+    for ($i = 0; $i < 5; $i++) {
+        DB::table('stores')->insert([
+            'name'  => $faker->company(),
+            'user_id' => $faker->numberBetween(1,5)
+        ]);
+    }
 
     for ($i = 0; $i < 5; $i++) {
         DB::table('products')->insert([

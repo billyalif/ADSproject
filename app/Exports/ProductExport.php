@@ -34,7 +34,7 @@ class ProductExport implements FromCollection, WithMapping, WithHeadings, WithEv
 
     public function map($product):array
     {
-        $a
+        $a = $a+1;
         return[
             $a,
             $product->name,

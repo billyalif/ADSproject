@@ -26,6 +26,14 @@ class ProductController extends Controller
                 ->addColumn('store_id', function($item) {
                     return $item->Store->name;
                 })
+                ->addColumn('action', function($item){
+                    $render =
+                    '
+                    <a href="/product-edit/'.$item->id.'">Update</a>
+                    <a href="/product-delete/'.$item->id.'" class="text-danger">Delete</a>
+                    ';
+                    return $render;
+                })
 
                 ->make(true);
         }

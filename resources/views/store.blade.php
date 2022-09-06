@@ -54,6 +54,7 @@
                         {data: 'description'},
                         {data: 'photo'},
                         {data: 'store_id'},
+                        {data: 'action'},
                     ],
                 });
             });
