@@ -41,7 +41,8 @@ class DatabaseSeeder extends Seeder
             'price' => $faker->randomNumber(6,true),
             'description' => $faker->sentence(),
             'photo' => $faker->url(),
-            'store_id' => $faker->numberBetween(1,5)
+            'store_id' => $faker->numberBetween(1,5),
+            'user_id' => $faker->numberBetween(1,5)
         ]);
     }
 

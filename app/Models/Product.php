@@ -12,8 +12,8 @@ class Product extends Model
     protected $table='products';
     protected $fillable=[
         'name',
-        'slug',
         'price',
+        'slug',
         'description',
         'photo',
         'store_id'
@@ -23,5 +23,9 @@ class Product extends Model
         return $this->belongsTo(Store::class);
     }
 
-    
+    public function User()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }
